@@ -30,7 +30,8 @@ public class Patient {
     public Patient(PatientDTO patientDTO) throws ParseException {
         this.prenom = patientDTO.getPrenom();
         this.nom = patientDTO.getNom();
-        this.dateNaissance = new SimpleDateFormat("yyyy-MM-dd").parse(patientDTO.getDateNaissance());;
+        String dateNaissance = patientDTO.getDateNaissance();
+        this.dateNaissance = new SimpleDateFormat("yyyy-MM-dd").parse(dateNaissance);;
         this.genre = patientDTO.getGenre();
         this.adressePostale = patientDTO.getAdressePostale();
         this.numeroTelephone = patientDTO.getNumeroTelephone();
