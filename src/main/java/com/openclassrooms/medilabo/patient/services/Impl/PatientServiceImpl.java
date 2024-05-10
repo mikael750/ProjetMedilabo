@@ -9,8 +9,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,7 +52,7 @@ public class PatientServiceImpl implements PatientService {
 
     }
 
-    public Patient savePatient(PatientDTO patientDTO) throws ParseException {
+    public Patient savePatient(PatientDTO patientDTO) {
 
         Patient patient = new Patient();
         BeanUtils.copyProperties(patientDTO,patient);

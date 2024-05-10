@@ -21,7 +21,7 @@ public class Patient {
     private int id;
     private String prenom;
     private String nom;
-    private Date dateNaissance;
+    private String dateNaissance;
     @Enumerated(EnumType.STRING)
     private Genre genre;
     private String adressePostale;
@@ -30,8 +30,7 @@ public class Patient {
     public Patient(PatientDTO patientDTO) throws ParseException {
         this.prenom = patientDTO.getPrenom();
         this.nom = patientDTO.getNom();
-        String dateNaissance = patientDTO.getDateNaissance();
-        this.dateNaissance = new SimpleDateFormat("yyyy-MM-dd").parse(dateNaissance);;
+        this.dateNaissance = String.valueOf(new SimpleDateFormat("yyyy-MM-dd").parse(patientDTO.getDateNaissance()));
         this.genre = patientDTO.getGenre();
         this.adressePostale = patientDTO.getAdressePostale();
         this.numeroTelephone = patientDTO.getNumeroTelephone();
